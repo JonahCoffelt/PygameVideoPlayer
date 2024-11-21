@@ -20,7 +20,7 @@ class VideoPlayer:
         pg.mixer.set_num_channels(64)
         pg.mixer.music.set_volume(75)
 
-    def play(self, video: str, audio: str=None):
+    def play(self, video: str, audio: str=None) -> None:
         """
         Plays the given video and audio in sync.
         Cannot read MP4 audio, so must provide an audio file if you want sound.
@@ -47,7 +47,7 @@ class VideoPlayer:
         self.is_playing = True
         self.paused = False
 
-    def stop(self):
+    def stop(self) -> None:
         """
         Stops the currently playing video
         """
@@ -59,14 +59,14 @@ class VideoPlayer:
         # Set is playing flag
         self.is_playing = False
 
-    def set_volume(self, volume):
+    def set_volume(self, volume: int) -> None:
         """
         Wrapper for the pg.mixer.music.set_volume function
         """
         
         pg.mixer.music.set_volume(volume)
 
-    def pause(self):
+    def pause(self) -> None:
         """
         Pauses the video and audio
         """
@@ -74,7 +74,7 @@ class VideoPlayer:
         pg.mixer.music.pause()
         self.paused = True
 
-    def unpause(self):
+    def unpause(self) -> None:
         """
         Resumes the video and audio from a pause
         """
@@ -82,7 +82,7 @@ class VideoPlayer:
         pg.mixer.music.unpause()
         self.paused = False
 
-    def get_frame(self, dt):
+    def get_frame(self, dt) -> pg.Surface:
         """
         Gets the currently playing video's frame. 
         Returns a pygame surface of the frame.
