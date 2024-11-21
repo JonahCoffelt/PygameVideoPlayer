@@ -28,7 +28,7 @@ In addition to the core features, there are a few other helpful functions:
 - `videoPlayer.set_volume(volume: int)` : Sets the audio volume (wrapper for pg.mixer.music.set_volume)
 
 ## Example
-Here is and example of how it could be used:
+Here is an example of how it could be used:
 ```py
 import pygame as pg
 from video import VideoPlayer
